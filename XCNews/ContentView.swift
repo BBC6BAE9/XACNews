@@ -9,9 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            NewsTabView().tabItem {
+        TabView {
+            NewsTabView()
+                .tabItem {
                 Label("News", systemImage: "newspaper")
+            }
+            SearchTabView()
+                .tabItem {
+                Label("search", systemImage: "magnifyingglass")
+            }
+            BookmarkTabView()
+                .tabItem {
+                Label("Saved", systemImage: "bookmark")
             }
         }
     }

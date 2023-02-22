@@ -89,7 +89,7 @@ extension View {
 }
 
 struct ArticleRowView_Previews: PreviewProvider {
-    @StateObject static var articleBookmarkViewModel = ArticleBookmarkViewModel()
+    @StateObject static var articleBookmarkViewModel = ArticleBookmarkViewModel.shared
 
     static var previews: some View {
         NavigationView {

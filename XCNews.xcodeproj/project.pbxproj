@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA5B058B29A5CF7A0032D3C8 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B058A29A5CF7A0032D3C8 /* DataStore.swift */; };
+		BA5B058D29A5DBB80032D3C8 /* ArticleSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B058C29A5DBB80032D3C8 /* ArticleSearchViewModel.swift */; };
+		BA5B058F29A5DE0C0032D3C8 /* SearchTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B058E29A5DE0C0032D3C8 /* SearchTabView.swift */; };
 		BAF7607829A10D5700277507 /* XCNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7607729A10D5700277507 /* XCNewsApp.swift */; };
 		BAF7607A29A10D5700277507 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7607929A10D5700277507 /* ContentView.swift */; };
 		BAF7607C29A10D5700277507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF7607B29A10D5700277507 /* Assets.xcassets */; };
@@ -48,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA5B058A29A5CF7A0032D3C8 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		BA5B058C29A5DBB80032D3C8 /* ArticleSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSearchViewModel.swift; sourceTree = "<group>"; };
+		BA5B058E29A5DE0C0032D3C8 /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
 		BAF7607429A10D5700277507 /* XCNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF7607729A10D5700277507 /* XCNewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCNewsApp.swift; sourceTree = "<group>"; };
 		BAF7607929A10D5700277507 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 				BAF7607929A10D5700277507 /* ContentView.swift */,
 				BAF7607B29A10D5700277507 /* Assets.xcassets */,
 				BAF7607D29A10D5700277507 /* Preview Content */,
+				BA5B058A29A5CF7A0032D3C8 /* DataStore.swift */,
 			);
 			path = XCNews;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 				BAF760C429A5297B00277507 /* NewsTabView.swift */,
 				BAF760C629A52E3F00277507 /* EmptyPlaceHolderView.swift */,
 				BAF760C829A52FA500277507 /* RetryView.swift */,
+				BA5B058E29A5DE0C0032D3C8 /* SearchTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 			children = (
 				BAF760C229A522B900277507 /* ArticleNewsViewModel.swift */,
 				BAF760CA29A53E0E00277507 /* ArticleBookmarkViewModel.swift */,
+				BA5B058C29A5DBB80032D3C8 /* ArticleSearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -335,12 +344,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF7607A29A10D5700277507 /* ContentView.swift in Sources */,
+				BA5B058B29A5CF7A0032D3C8 /* DataStore.swift in Sources */,
 				BAF760B929A5124100277507 /* ArticleListView.swift in Sources */,
 				BAF760C729A52E3F00277507 /* EmptyPlaceHolderView.swift in Sources */,
 				BAF760A929A114DC00277507 /* ArticleRowView.swift in Sources */,
 				BAF760C929A52FA500277507 /* RetryView.swift in Sources */,
 				BAF760C029A51E0C00277507 /* Category.swift in Sources */,
 				BAF760C529A5297B00277507 /* NewsTabView.swift in Sources */,
+				BA5B058F29A5DE0C0032D3C8 /* SearchTabView.swift in Sources */,
+				BA5B058D29A5DBB80032D3C8 /* ArticleSearchViewModel.swift in Sources */,
 				BAF7607829A10D5700277507 /* XCNewsApp.swift in Sources */,
 				BAF760A629A1133300277507 /* NewsAPIResponse.swift in Sources */,
 				BAF760CB29A53E0E00277507 /* ArticleBookmarkViewModel.swift in Sources */,
@@ -435,7 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -489,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -521,7 +533,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.tv.MetrnomeWatch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = test.ARKitTutorailTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -551,7 +563,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.tv.MetrnomeWatch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = test.ARKitTutorailTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -568,7 +580,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2JSKY93FHH;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.tv.XCNewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -588,7 +600,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2JSKY93FHH;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.tv.XCNewsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -11,7 +11,18 @@ import SwiftUI
 class ArticleBookmarkViewModel: ObservableObject{
     @Published private(set) var bookmarks:[Article] = []
     
-    /// 是否已经被收藏
+    private let bookmarksStore = PlistDataStore<[Article]>(fileName: "bookmarks")
+    
+    static let shared = ArticleBookmarkViewModel()
+    private init() {
+        Task {
+            await load()
+        }
+    }
+    
+    private func load() async{
+        bookmarks = await bookmarksStore.load() ?? []
+    }
     func isBookmark(for article:Article) -> Bool {
         bookmarks.first { article.id == $0.id } != nil
     }
@@ -21,12 +32,21 @@ class ArticleBookmarkViewModel: ObservableObject{
             return
         }
         bookmarks.insert(article, at: 0)
+        bookmarkUpdated()
     }
     
     func removeBookmark(for article:Article) {
         guard let index = bookmarks.firstIndex(where: {$0.id == article.id}) else {
             return
-        }
+        } 
         bookmarks.remove(at: index)
     }
+    
+    private func bookmarkUpdated() {
+        let boookmarks = self.bookmarks
+        Task {
+            await bookmarksStore.save(_:boookmarks)
+        }
+    }
 }
+ 

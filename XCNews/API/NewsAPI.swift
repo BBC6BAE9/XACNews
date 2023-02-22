@@ -36,7 +36,7 @@ struct NewsAPI {
         }
 
         switch response.statusCode {
-
+ 
         case (200...299), (400...499):
             let apiResponse = try jsonDecoder.decode(NewsAPIResponse.self, from: data)
             if apiResponse.status == "ok" {

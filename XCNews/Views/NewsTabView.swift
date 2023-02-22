@@ -47,7 +47,7 @@ struct NewsTabView: View {
 
 
 struct NewsTabView_Previews: PreviewProvider {
-    @StateObject static var articleBookmarkViewModel = ArticleBookmarkViewModel()
+    @StateObject static var articleBookmarkViewModel = ArticleBookmarkViewModel.shared
     static var previews: some View {
         NewsTabView(articleNewsVM: ArticleNewsViewModel(articles: Article.previewData)).environmentObject(articleBookmarkViewModel)
     }

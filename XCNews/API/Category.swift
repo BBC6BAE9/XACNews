@@ -9,7 +9,7 @@ import Foundation
 
 enum Category:String, CaseIterable {
     case general
-    case bussiness
+    case business
     case technology
     case entertainment
     case sports

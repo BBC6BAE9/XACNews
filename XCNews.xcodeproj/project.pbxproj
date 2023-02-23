@@ -31,6 +31,7 @@
 		BAF760C929A52FA500277507 /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF760C829A52FA500277507 /* RetryView.swift */; };
 		BAF760CB29A53E0E00277507 /* ArticleBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF760CA29A53E0E00277507 /* ArticleBookmarkViewModel.swift */; };
 		BAF760CD29A5430800277507 /* BookmarkTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF760CC29A5430800277507 /* BookmarkTabView.swift */; };
+		BAF760CF29A658E000277507 /* SearchHistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF760CE29A658E000277507 /* SearchHistoryListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		BAF760C829A52FA500277507 /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
 		BAF760CA29A53E0E00277507 /* ArticleBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBookmarkViewModel.swift; sourceTree = "<group>"; };
 		BAF760CC29A5430800277507 /* BookmarkTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTabView.swift; sourceTree = "<group>"; };
+		BAF760CE29A658E000277507 /* SearchHistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				BAF760C629A52E3F00277507 /* EmptyPlaceHolderView.swift */,
 				BAF760C829A52FA500277507 /* RetryView.swift */,
 				BA5B058E29A5DE0C0032D3C8 /* SearchTabView.swift */,
+				BAF760CE29A658E000277507 /* SearchHistoryListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				BAF760B929A5124100277507 /* ArticleListView.swift in Sources */,
 				BAF760C729A52E3F00277507 /* EmptyPlaceHolderView.swift in Sources */,
 				BAF760A929A114DC00277507 /* ArticleRowView.swift in Sources */,
+				BAF760CF29A658E000277507 /* SearchHistoryListView.swift in Sources */,
 				BAF760C929A52FA500277507 /* RetryView.swift in Sources */,
 				BAF760C029A51E0C00277507 /* Category.swift in Sources */,
 				BAF760C529A5297B00277507 /* NewsTabView.swift in Sources */,

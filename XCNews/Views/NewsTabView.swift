@@ -14,12 +14,15 @@ struct NewsTabView: View {
         NavigationView {
             ArticleListView(articles: articles)
                 .overlay(overlayView)
+                .refreshable {
+//                    loadTask()
+                }
+                .task(id: articleNewsVM.selectedCategory, loadTask)
                 .onAppear{
-                    Task.init {
-                        await articleNewsVM.loadArticles()
-                    }
+//                    loadTask()
                 }
                 .navigationTitle(articleNewsVM.selectedCategory.text)
+                .navigationBarItems(trailing: menu)
         }
     }
     
@@ -29,7 +32,7 @@ struct NewsTabView: View {
         case .empty: ProgressView()
         case .success(let articles) where articles.isEmpty: EmptyPlaceHolderView(text: "No Articles", image: nil)
         case .failure(let error): RetryView(text: error.localizedDescription) {
-            // Refresh the newsAPI
+//            loadTask()
         }
         default: EmptyView()
         }
@@ -40,6 +43,23 @@ struct NewsTabView: View {
             return articles
         } else {
             return []
+        }
+    }
+    
+    private func loadTask() async{
+        await articleNewsVM.loadArticles()
+    }
+    
+    private var menu:some View {
+        Menu {
+            Picker("Category", selection: $articleNewsVM.selectedCategory){
+                ForEach(Category.allCases) {
+                    Text($0.text).tag($0)
+                }
+            }
+        } label: {
+            Image(systemName: "fiberchannel")
+                .imageScale(.large)
         }
     }
 }

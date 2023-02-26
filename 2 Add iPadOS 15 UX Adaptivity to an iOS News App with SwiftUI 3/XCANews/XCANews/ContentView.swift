@@ -11,14 +11,15 @@ struct ContentView: View {
     
     
     @Environment(\.horizontalSizeClass) private var horizentalSizeClass
-    
+    @AppStorage("item_selection") var selectedMenuItemId:MenuItem.ID?
+
     var body: some View {
           
         switch horizentalSizeClass {
         case .regular:
-            SideBarContentView()
+            SideBarContentView(selectedMenuItemId: $selectedMenuItemId)
         default:
-            TabContentView()
+            TabContentView(selectedMenuItemId: $selectedMenuItemId)
         }
     }
 }

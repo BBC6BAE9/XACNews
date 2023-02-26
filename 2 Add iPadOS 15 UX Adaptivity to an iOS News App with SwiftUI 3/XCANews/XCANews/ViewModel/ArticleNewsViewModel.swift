@@ -23,9 +23,18 @@ struct FetchTaskToken: Equatable {
 class ArticleNewsViewModel: ObservableObject {
     
     @Published var phase = DataFetchPhase<[Article]>.empty
-    @Published var fetchTaskToken: FetchTaskToken
-    private let newsAPI = NewsAPI.shared
+    @Published var fetchTaskToken: FetchTaskToken {
+        didSet{
+            if oldValue.category != fetchTaskToken.category {
+                selectedMenuItemId = MenuItem.category(fetchTaskToken.category).id
+            }
+        }
+    }
+    @AppStorage("item_selection") var selectedMenuItemId:MenuItem.ID?
+
     
+    private let newsAPI = NewsAPI.shared
+
     init(articles: [Article]? = nil, selectedCategory: Category = .general) {
         if let articles = articles {
             self.phase = .success(articles)

@@ -7,17 +7,12 @@
 
 import Foundation
 
-enum MenuItem:CaseIterable{
-    
-    static var allCases: [MenuItem]{
-        return [.search, .saved] + Category.menuItems
-    }
-    
+enum MenuItem: CaseIterable {
     case search
     case saved
     case category(Category)
     
-    var text:String{
+    var text: String {
         switch self {
         case .search:
             return "Search"
@@ -28,7 +23,7 @@ enum MenuItem:CaseIterable{
         }
     }
     
-    var systemImage:String {
+    var systemImage: String {
         switch self {
         case .search:
             return "magnifyingglass"
@@ -38,10 +33,16 @@ enum MenuItem:CaseIterable{
             return category.systemImage
         }
     }
+    
+    static var allCases: [MenuItem] {
+        return [.search, .saved] + Category.menuItems
+    }
+    
 }
 
-extension MenuItem:Identifiable {
-    var id:String{
+extension MenuItem: Identifiable {
+    
+    var id: String {
         switch self {
         case .search:
             return "search"
@@ -51,10 +52,26 @@ extension MenuItem:Identifiable {
             return category.rawValue
         }
     }
+    
+    init?(id: MenuItem.ID?) {
+        switch id {
+        case MenuItem.search.id:
+            self = .search
+        case MenuItem.saved.id:
+            self = .saved
+        default:
+            if let id = id, let category = Category(rawValue: id) {
+                self = .category(category)
+            } else {
+                return nil
+            }
+        }
+    }
+    
 }
 
 extension Category {
-    static var menuItems:[MenuItem]{
-        allCases.map {.category($0)}
+    static var menuItems: [MenuItem] {
+        allCases.map { .category($0) }
     }
 }
